@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation';
 import { cn } from '@/utils/cn';
 import { Sidebar } from '@/components/shared/Sidebar';
 import { TopBar } from '@/components/shared/TopBar';
+import { AuthGuard } from '@/components/shared/AuthGuard';
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }): React.ReactElement {
   const pathname = usePathname();
@@ -15,12 +16,14 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   }
 
   return (
-    <div className="min-h-screen text-text">
-      <Sidebar />
-      <div className="min-h-screen transition-all duration-300 lg:ml-64">
-        <TopBar />
-        <main className="p-6">{children}</main>
+    <AuthGuard>
+      <div className="min-h-screen text-text">
+        <Sidebar />
+        <div className="min-h-screen transition-all duration-300 lg:ml-64">
+          <TopBar />
+          <main className="p-6">{children}</main>
+        </div>
       </div>
-    </div>
+    </AuthGuard>
   );
 }
