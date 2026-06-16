@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { User } from '@/utils/permissions';
+import { User, UserRole } from '@/utils/permissions';
 
 interface AuthState {
   user: User | null;
@@ -34,7 +34,35 @@ export const useAuthStore = create<AuthState>()(
         try {
           await new Promise((resolve) => setTimeout(resolve, 800));
           if (email && password.length >= 6) {
-            set({ user: DEFAULT_USER, token: 'mock-jwt-token', isAuthenticated: true });
+            let role: UserRole = 'super_admin';
+            let name = 'Alex Morgan';
+
+            const lowerEmail = email.toLowerCase();
+            if (lowerEmail.startsWith('hr')) {
+              role = 'hr_admin';
+              name = 'Sarah Smith';
+            } else if (lowerEmail.startsWith('manager')) {
+              role = 'manager';
+              name = 'John Doe';
+            } else if (lowerEmail.startsWith('employee') || lowerEmail.startsWith('user')) {
+              role = 'employee';
+              name = 'Daniel Davis';
+            } else if (lowerEmail.startsWith('auditor')) {
+              role = 'auditor';
+              name = 'Sophia Rodriguez';
+            }
+
+            const loggedInUser: User = {
+              id: role === 'super_admin' ? '1' : `user-${role}`,
+              email,
+              name,
+              role,
+              avatar: '',
+              isActive: true,
+              createdAt: '2024-01-01T00:00:00Z',
+              updatedAt: '2024-01-01T00:00:00Z',
+            };
+            set({ user: loggedInUser, token: 'mock-jwt-token', isAuthenticated: true });
             return true;
           }
           return false;
