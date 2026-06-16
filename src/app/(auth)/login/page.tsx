@@ -9,6 +9,7 @@ import { useAuthStore } from '@/store/authStore';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Label } from '@/components/ui/Label';
+import { Select } from '@/components/ui/Select';
 import Link from 'next/link';
 
 const schema = z.object({
@@ -18,12 +19,21 @@ const schema = z.object({
 
 type LoginFormValues = z.infer<typeof schema>;
 
+const DEMO_CREDENTIALS = [
+  { label: 'Super Admin (Alex Morgan)', value: 'admin@company.com:123456' },
+  { label: 'HR Admin (Sarah Smith)', value: 'hr@company.com:123456' },
+  { label: 'Manager (John Doe)', value: 'manager@company.com:123456' },
+  { label: 'Employee (Daniel Davis)', value: 'employee@company.com:123456' },
+  { label: 'Auditor (Sophia Rodriguez)', value: 'auditor@company.com:123456' },
+];
+
 export default function LoginPage(): React.ReactElement {
   const router = useRouter();
   const { login, isLoading } = useAuthStore();
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm<LoginFormValues>({ resolver: zodResolver(schema) });
 
@@ -31,6 +41,15 @@ export default function LoginPage(): React.ReactElement {
     const success = await login(values.email, values.password);
     if (success) {
       router.push('/dashboard');
+    }
+  };
+
+  const handleCredentialSelect = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+    const val = e.target.value;
+    if (val) {
+      const [email, password] = val.split(':');
+      setValue('email', email, { shouldValidate: true });
+      setValue('password', password, { shouldValidate: true });
     }
   };
 
@@ -42,6 +61,16 @@ export default function LoginPage(): React.ReactElement {
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5" noValidate>
+        <div>
+          <Label htmlFor="demo-role">Demo Account Shortcut</Label>
+          <Select
+            id="demo-role"
+            placeholder="Choose a role to autofill..."
+            options={DEMO_CREDENTIALS}
+            onChange={handleCredentialSelect}
+          />
+        </div>
+
         <div>
           <Label htmlFor="email" isRequired>
             Email
