@@ -6,7 +6,7 @@ interface StatCardProps {
   title: string;
   value: string | number;
   change?: string;
-  changeType?: 'positive' | 'negative' | 'neutral';
+  changeType?: 'positive' | 'negative' | 'neutral' | 'warning';
   icon: LucideIcon;
   className?: string;
 }
@@ -16,6 +16,7 @@ export function StatCard({ title, value, change, changeType = 'neutral', icon: I
     positive: 'text-green-600 dark:text-green-400',
     negative: 'text-red-600 dark:text-red-400',
     neutral: 'text-text-muted',
+    warning: 'text-amber-600 dark:text-amber-400',
   };
 
   return (

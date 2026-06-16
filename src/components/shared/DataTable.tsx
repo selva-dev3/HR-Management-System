@@ -7,7 +7,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 type Column<T> = {
   header: string;
-  accessor: keyof T | ((row: T) => React.ReactNode);
+  accessor: keyof T | ((row: T, index: number) => React.ReactNode);
   className?: string;
 };
 
@@ -63,14 +63,14 @@ export function DataTable<T extends { id?: string }>({
           <tbody className="divide-y divide-border bg-surface">
             {sliced.map((row, rowIdx) => (
               <tr key={row.id ?? rowIdx} className={cn('hover:bg-surface-raised', rowClassName)}>
-                {columns.map((col, colIdx) => {
-                  const cell = typeof col.accessor === 'function' ? col.accessor(row) : (row[col.accessor] as React.ReactNode);
-                  return (
-                    <td key={colIdx} className={cn('whitespace-nowrap px-4 py-3 text-text', col.className)}>
-                      {cell}
-                    </td>
-                  );
-                })}
+                  {columns.map((col, colIdx) => {
+                    const cell = typeof col.accessor === 'function' ? col.accessor(row, rowIdx) : (row[col.accessor] as React.ReactNode);
+                    return (
+                      <td key={colIdx} className={cn('whitespace-nowrap px-4 py-3 text-text', col.className)}>
+                        {cell}
+                      </td>
+                    );
+                  })}
               </tr>
             ))}
           </tbody>
