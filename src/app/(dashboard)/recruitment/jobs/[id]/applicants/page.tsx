@@ -3,9 +3,7 @@
 import React from 'react';
 import { useParams } from 'next/navigation';
 import { PageHeader } from '@/components/shared/PageHeader';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
-import { EmptyState } from '@/components/ui/EmptyState';
 
 const stages = ['Applied', 'Screening', 'Interview', 'Offer', 'Hired', 'Rejected'];
 

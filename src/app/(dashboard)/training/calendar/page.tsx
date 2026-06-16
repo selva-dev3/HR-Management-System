@@ -5,8 +5,6 @@ import { PageHeader } from '@/components/shared/PageHeader';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { Button } from '@/components/ui/Button';
-import { CalendarDays } from 'lucide-react';
-
 const events = [
   { id: 't1', title: 'React Advanced Patterns', trainer: 'Alex Morgan', date: 'Jun 25', mode: 'Online', seats: 20 },
   { id: 't2', title: 'Leadership 101', trainer: 'Sarah Smith', date: 'Jun 28', mode: 'Offline', seats: 15 },

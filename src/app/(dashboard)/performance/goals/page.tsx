@@ -33,7 +33,7 @@ export default function PerformanceGoalsPage(): React.ReactElement {
           {
             header: 'Status',
             accessor: (row) => {
-              const map: Record<string, 'default' | 'success' | 'warning' | 'error'> = {
+              const map: Record<string, 'default' | 'primary' | 'success' | 'warning' | 'error'> = {
                 'Not started': 'default',
                 'In progress': 'primary',
                 'At risk': 'warning',

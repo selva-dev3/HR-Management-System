@@ -10,7 +10,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Label } from '@/components/ui/Label';
-import { Select } from '@/components/ui/Select';
 import { employeeService } from '@/features/employees/services/employeeService';
 
 const personalSchema = z.object({
@@ -49,7 +48,6 @@ export default function NewEmployeePage(): React.ReactElement {
     handleSubmit,
     formState: { errors },
     trigger,
-    getValues,
   } = useForm<FormValues>({ resolver: zodResolver(combinedSchema) });
 
   const onSubmit = async (values: FormValues): Promise<void> => {

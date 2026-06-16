@@ -33,7 +33,7 @@ export default function ResetPasswordPage(): React.ReactElement {
     formState: { errors },
   } = useForm<FormValues>({ resolver: zodResolver(schema) });
 
-  const onSubmit = async (values: FormValues): Promise<void> => {
+  const onSubmit = async (_values: FormValues): Promise<void> => {
     setIsLoading(true);
     try {
       await new Promise((res) => setTimeout(res, 800));

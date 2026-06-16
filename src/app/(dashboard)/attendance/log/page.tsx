@@ -5,7 +5,6 @@ import { PageHeader } from '@/components/shared/PageHeader';
 import { DataTable } from '@/components/shared/DataTable';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
-import { formatDate } from '@/utils/formatDate';
 import { Pencil } from 'lucide-react';
 
 const logs = Array.from({ length: 10 }).map((_, i) => ({

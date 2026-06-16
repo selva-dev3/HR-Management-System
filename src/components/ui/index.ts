@@ -4,7 +4,6 @@ export * from './Label';
 export * from './Select';
 export * from './Badge';
 export * from './Modal';
-export * from './Skeleton';
 export * from './Spinner';
 export * from './EmptyState';
 export * from './Card';

@@ -3,10 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
-import { useAuthStore } from '@/store/authStore';
-
 export default function UnauthorizedPage(): React.ReactElement {
-  const { user } = useAuthStore();
   const homeLink = '/dashboard';
 
   return (

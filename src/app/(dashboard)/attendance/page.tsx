@@ -4,7 +4,6 @@ import React from 'react';
 import { PageHeader } from '@/components/shared/PageHeader';
 import { StatCard } from '@/components/shared/StatCard';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
-import { Badge } from '@/components/ui/Badge';
 import { DataTable } from '@/components/shared/DataTable';
 import { UserCheck, UserX, Clock, Home } from 'lucide-react';
 

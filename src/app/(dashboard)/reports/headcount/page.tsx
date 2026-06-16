@@ -9,12 +9,12 @@ import { Download } from 'lucide-react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 
 const data = [
-  { month: 'Jan', total: 120, newHires: 4, exits: 1 },
-  { month: 'Feb', total: 123, newHires: 5, exits: 2 },
-  { month: 'Mar', total: 128, newHires: 6, exits: 1 },
-  { month: 'Apr', total: 131, newHires: 4, exits: 1 },
-  { month: 'May', total: 135, newHires: 5, exits: 1 },
-  { month: 'Jun', total: 140, newHires: 6, exits: 1 },
+  { id: '1', month: 'Jan', total: 120, newHires: 4, exits: 1 },
+  { id: '2', month: 'Feb', total: 123, newHires: 5, exits: 2 },
+  { id: '3', month: 'Mar', total: 128, newHires: 6, exits: 1 },
+  { id: '4', month: 'Apr', total: 131, newHires: 4, exits: 1 },
+  { id: '5', month: 'May', total: 135, newHires: 5, exits: 1 },
+  { id: '6', month: 'Jun', total: 140, newHires: 6, exits: 1 },
 ];
 
 export default function HeadcountReportPage(): React.ReactElement {

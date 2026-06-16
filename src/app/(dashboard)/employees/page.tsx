@@ -2,7 +2,6 @@
 
 import React, { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import { PageHeader } from '@/components/shared/PageHeader';
 import { DataTable } from '@/components/shared/DataTable';
 import { Input } from '@/components/ui/Input';
@@ -20,7 +19,6 @@ export default function EmployeesPage(): React.ReactElement {
   const [search, setSearch] = useState('');
   const [deptFilter, setDeptFilter] = useState('');
   const [statusFilter, setStatusFilter] = useState('');
-  const router = useRouter();
 
   useEffect(() => {
     employeeService.getAll().then((data) => {

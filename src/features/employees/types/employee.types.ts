@@ -32,6 +32,7 @@ export interface CreateEmployeeDto {
   joinDate: string;
   location?: string;
   managerId?: string;
+  status?: 'Active' | 'Inactive';
   bankAccount?: string;
   bankIfsc?: string;
   salaryStructureId?: string;

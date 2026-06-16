@@ -6,7 +6,6 @@ import { PageHeader } from '@/components/shared/PageHeader';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { DataTable } from '@/components/shared/DataTable';
-import { Badge } from '@/components/ui/Badge';
 
 export default function RunPayrollPage(): React.ReactElement {
   const router = useRouter();

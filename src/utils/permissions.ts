@@ -1,5 +1,16 @@
 export type UserRole = 'super_admin' | 'hr_admin' | 'manager' | 'employee' | 'auditor';
 
+export interface User {
+  id: string;
+  email: string;
+  name: string;
+  role: UserRole;
+  avatar?: string;
+  isActive?: boolean;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
 export const ROLES = {
   SUPER_ADMIN: 'super_admin' as UserRole,
   HR_ADMIN: 'hr_admin' as UserRole,

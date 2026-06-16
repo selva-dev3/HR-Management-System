@@ -32,6 +32,7 @@ export const employeeService = {
   create: async (data: CreateEmployeeDto): Promise<Employee> => {
     await new Promise((res) => setTimeout(res, DELAY));
     const created: Employee = {
+      status: 'Active',
       ...data,
       id: crypto.randomUUID(),
       employeeId: `E${10000 + MOCK_EMPLOYEES.length}`,

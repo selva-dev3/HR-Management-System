@@ -3,7 +3,6 @@
 import React from 'react';
 import { PageHeader } from '@/components/shared/PageHeader';
 import { StatCard } from '@/components/shared/StatCard';
-import { DataTable } from '@/components/shared/DataTable';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { EmptyState } from '@/components/ui/EmptyState';
 import { formatDate } from '@/utils/formatDate';
@@ -12,7 +11,6 @@ import {
   UserCheck,
   CalendarX,
   Briefcase,
-  TrendingUp,
   PartyPopper,
 } from 'lucide-react';
 import {

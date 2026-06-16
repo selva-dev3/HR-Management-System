@@ -7,7 +7,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 import { Plus } from 'lucide-react';
-import { formatDate } from '@/utils/formatDate';
 
 const wfh = [
   { id: 'w1', employee: 'John Doe', dates: 'Jun 10 - Jun 12', reason: 'Personal work', status: 'Approved' },

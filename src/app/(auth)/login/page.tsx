@@ -9,7 +9,6 @@ import { useAuthStore } from '@/store/authStore';
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Label } from '@/components/ui/Label';
-import { Spinner } from '@/components/ui/Spinner';
 import Link from 'next/link';
 
 const schema = z.object({

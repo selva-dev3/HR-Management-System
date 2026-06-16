@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { Button } from '@/components/ui/Button';
 
 interface RolePermission {
+  id: string;
   role: string;
   view: boolean;
   create: boolean;
@@ -16,10 +17,10 @@ interface RolePermission {
 }
 
 const initial: RolePermission[] = [
-  { role: 'hr_admin', view: true, create: true, edit: true, delete: false, export: true },
-  { role: 'manager', view: true, create: false, edit: true, delete: false, export: false },
-  { role: 'employee', view: true, create: false, edit: false, delete: false, export: false },
-  { role: 'auditor', view: true, create: false, edit: false, delete: false, export: true },
+  { id: '1', role: 'hr_admin', view: true, create: true, edit: true, delete: false, export: true },
+  { id: '2', role: 'manager', view: true, create: false, edit: true, delete: false, export: false },
+  { id: '3', role: 'employee', view: true, create: false, edit: false, delete: false, export: false },
+  { id: '4', role: 'auditor', view: true, create: false, edit: false, delete: false, export: true },
 ];
 
 export default function RolesPermissionsPage(): React.ReactElement {

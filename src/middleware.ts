@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
-export function middleware(request: NextRequest): NextResponse {
+export function middleware(_request: NextRequest): NextResponse {
   // Auth handling is managed client-side via AuthGuard for this demo.
   // In a real deployment, validate httpOnly cookie here.
   return NextResponse.next();
